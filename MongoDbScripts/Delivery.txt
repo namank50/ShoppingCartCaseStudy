@@ -1,0 +1,41 @@
+use ShoppingCartCaseStudy
+
+db.Delivery.insertMany([{
+  "_id": "DY00001",
+  "DName": {
+    "FName": "Muskan",
+    "MName": "",
+    "LName": "Tomar"
+  },
+  "DFirmName": "Ved Transport Limited",
+  "DMobileNo": 6396502789,
+  "DEmail": "vedtransport@gmail.com",
+  "DPanNo": "EEIPK2227N",
+  "DGSTNo": "369258741",
+  "DAddress": {
+    "Street": "Saraswati Nagar",
+    "City": "Meerut",
+    "State": "Haryana",
+    "Pincode": 136978
+  },
+  "DPassword": "ved@9876543210"
+},{
+  "_id": "DY00002",
+  "DName": {
+    "FName": "Jassie",
+    "MName": "",
+    "LName": "Gill"
+  },
+  "DFirmName": "Delivery Wale Limited",
+  "DMobileNo": 6556502789,
+  "DEmail": "deliveryWale@gmail.com",
+  "DPanNo": "EEIPL8957N",
+  "DGSTNo": "369248821",
+  "DAddress": {
+    "Street": "East Patel Nagar",
+    "City": "Patel Nagar",
+    "State": "Delhi",
+    "Pincode": 110022
+  },
+  "DPassword": "vipNagar@9876543210"
+}])

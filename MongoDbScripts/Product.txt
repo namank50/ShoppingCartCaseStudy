@@ -1,0 +1,109 @@
+db.Product.insertMany([{
+  "_id": "PID00001",
+  "PName": "Apsara Pencil",
+  "Category": "Pencil",
+  "PDesc": "Pack of 10 Pencils",
+  "Price": 50,
+  "Quantity": 100,
+  "DealerId": "DEA00001",
+  "ImgUrl": "C:/Users/NAMKAPOO/Downloads/Images/Apsara    "
+},{
+  "_id": "PID00002",
+  "PName": "Natraj Pencil",
+  "Category": "Pencil",
+  "PDesc": "Pack of 10 Extra Dark Pencils",
+  "Price": 45,
+  "Quantity": 200,
+  "DealerId": "DEA00002",
+  "ImgUrl": "C:/Users/NAMKAPOO/Downloads/Images/Natraj"
+},{
+  "_id": "PID00003",
+  "PName": "Montex Mega Top",
+  "Category": "Pens",
+  "PDesc": "Pack of ten ball pens",
+  "Price": 100,
+  "Quantity": 50,
+  "DealerId": "DEA00002",
+  "ImgUrl": "C:/Users/NAMKAPOO/Downloads/Images/MegaTop"
+},{
+  "_id": "PID00004",
+  "PName": "Add Gel Pen",
+  "Category": "Pens",
+  "PDesc": "Good Quality Gel pen",
+  "Price": 30,
+  "Quantity": 100,
+  "DealerId": "DEA00003",
+  "ImgUrl": "C:/Users/NAMKAPOO/Downloads/Images/AddGel"
+},{
+  "_id": "PID00005",
+  "PName": "Register A4 Size",
+  "Category": "Register",
+  "PDesc": "A4 Size register with 200 pages",
+  "Price": 100,
+  "Quantity": 40,
+  "DealerId": "DEA00002",
+  "ImgUrl": "C:/Users/NAMKAPOO/Downloads/Images/Register1"
+},{
+  "_id": "PID00006",
+  "PName": "Register",
+  "Category": "Register",
+  "PDesc": "A4 Size register with 100 pages",
+  "Price": 60,
+  "Quantity": 40,
+  "DealerId": "DEA00003",
+  "ImgUrl": "C:/Users/NAMKAPOO/Downloads/Images/Register2"
+},{
+  "_id": "PID00007",
+  "PName": "Water Color",
+  "Category": "Colours",
+  "PDesc": "Pack of 12 shades water colors",
+  "Price": 20,
+  "Quantity": 100,
+  "DealerId": "DEA00001",
+  "ImgUrl": "C:/Users/NAMKAPOO/Downloads/Images/Water"
+},{
+  "_id": "PID00008",
+  "PName": "Pencil Color",
+  "Category": "Colours",
+  "PDesc": "Pack of 12 shades pencil colors",
+  "Price": 50,
+  "Quantity": 100,
+  "DealerId": "DEA00001",
+  "ImgUrl": "C:/Users/NAMKAPOO/Downloads/Images/Pencil"
+},{
+  "_id": "PID00009",
+  "PName": "I too had a love story",
+  "Category": "Novels",
+  "PDesc": "by Ravinder Singh",
+  "Price": 250,
+  "Quantity": 10,
+  "DealerId": "DEA00003",
+  "ImgUrl": "C:/Users/NAMKAPOO/Downloads/Images/Novel1"
+},{
+  "_id": "PID00010",
+  "PName": "Steve Jobs",
+  "Category": "Novels",
+  "PDesc": "by Walter Isaacson",
+  "Price": 259,
+  "Quantity": 10,
+  "DealerId": "DEA00003",
+  "ImgUrl": "C:/Users/NAMKAPOO/Downloads/Images/Novel2"
+},{
+  "_id": "PID00011",
+  "PName": "Gate Previous 10 Year Papers Solved",
+  "Category": "Competitive Books",
+  "PDesc": "by Arihant Publication with solutions",
+  "Price": 750,
+  "Quantity": 8,
+  "DealerId": "DEA00002",
+  "ImgUrl": "C:/Users/NAMKAPOO/Downloads/Images/Book1"
+},{
+  "_id": "PID00012",
+  "PName": "IBPS po",
+  "Category": "Competitive Books",
+  "PDesc": "by Arihant Publication with solutions",
+  "Price": 1050,
+  "Quantity": 5,
+  "DealerId": "DEA00002",
+  "ImgUrl": "C:/Users/NAMKAPOO/Downloads/Images/Book2"
+}])

@@ -1,0 +1,136 @@
+use ShoppingCartCaseStudy
+
+db.Customers.insertMany([{
+  "_id": "CUST00001",
+  "Name": {
+    "FName": "Naman",
+    "MName": "",
+    "LName": "Kapoor"
+  },
+  "CustMobNo": 9720531773,
+  "CustEmail": "namank50@gmail.com",
+  "CustAddress": {
+    "Street": "Jawahar Nagar",
+    "City": "Pantanagar",
+    "State": "Uttarakhand",
+    "Pincode": 263149
+  },
+  "CustDOB": {
+    "$date": "1997-08-08T18:30:00Z"
+  },
+  "Password": "Naman@123"
+},{
+  "_id": "CUST00002",
+  "Name": {
+    "FName": "Aman",
+    "MName": "Ram",
+    "LName": "Kishor"
+  },
+  "CustMobNo": 9720531997,
+  "CustEmail": "aman@gmail.com",
+  "CustAddress": {
+    "Street": "Vikas Nagar",
+    "City": "Pithoragarh",
+    "State": "Uttarakhand",
+    "Pincode": 262501
+  },
+  "CustDOB": {
+    "$date": "1997-08-08T18:30:00Z"
+  },
+  "Password": "King@123"
+},{
+  "_id": "CUST00003",
+  "Name": {
+    "FName": "Anuj",
+    "MName": "",
+    "LName": "Sonker"
+  },
+  "CustMobNo": 8920531773,
+  "CustEmail": "anujsonker50@gmail.com",
+  "CustAddress": {
+    "Street": "Prem Nagarr",
+    "City": "Dehradun",
+    "State": "Uttarakhand",
+    "Pincode": 263101
+  },
+  "CustDOB": {
+    "$date": "1997-11-05T00:00:00Z"
+  },
+  "Password": "IamNotTelling@123"
+},{
+  "_id": "CUST00004",
+  "Name": {
+    "FName": "Ram",
+    "MName": "Kumar",
+    "LName": "Bhadoria"
+  },
+  "CustMobNo": 9720888773,
+  "CustEmail": "ramu@gmail.com",
+  "CustAddress": {
+    "Street": "Model Town",
+    "City": "South Delhi",
+    "State": "Delhi",
+    "Pincode": 110011
+  },
+  "CustDOB": {
+    "$date": "1977-12-31T18:30:00Z"
+  },
+  "Password": "nikitamerijaan@122"
+},{
+  "_id": "CUST00005",
+  "Name": {
+    "FName": "Kishore",
+    "MName": "",
+    "LName": "Kumar"
+  },
+  "CustMobNo": 977731773,
+  "CustEmail": "kk@gmail.com",
+  "CustAddress": {
+    "Street": "Thane",
+    "City": "Mumbai",
+    "State": "Maharastra",
+    "Pincode": 363159
+  },
+  "CustDOB": {
+    "$date": "1985-09-15T00:00:00Z"
+  },
+  "Password": "kkk@9720"
+},{
+  "_id": "CUST00006",
+  "Name": {
+    "FName": "Parul",
+    "MName": "",
+    "LName": "Mehra"
+  },
+  "CustMobNo": 9411175069,
+  "CustEmail": "parul@gmail.com",
+  "CustAddress": {
+    "Street": "Aadarsh Nagar",
+    "City": "Pune",
+    "State": "Maharastra",
+    "Pincode": 314256
+  },
+  "CustDOB": {
+    "$date": "1985-01-15T18:30:00Z"
+  },
+  "Password": "parul@192"
+},{
+  "_id": "CUST00007",
+  "Name": {
+    "FName": "Karan",
+    "MName": "",
+    "LName": "Gill"
+  },
+  "CustMobNo": 9720538897,
+  "CustEmail": "karan@gmail.com",
+  "CustAddress": {
+    "Street": "Saraswati Nagar",
+    "City": "Pithoragarh",
+    "State": "Uttarakhand",
+    "Pincode": 262501
+  },
+  "CustDOB": {
+    "$date": "1995-02-01T18:30:00Z"
+  },
+  "Password": "karan@459"
+}])

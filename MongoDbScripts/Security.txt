@@ -1,0 +1,68 @@
+use ShoppingCartCaseStudy
+
+db.Security.insertMany([{
+  "_id": "Cust00001",
+  "Password": "Naman@123",
+  "Role": "Customer"
+},
+{
+  "_id": "Cust00002",
+  "Password": "King@123",
+  "Role": "Customer"
+},
+{
+  "_id": "Cust00003",
+  "Password": "IamNotTelling@123",
+  "Role": "Customer"
+},
+{
+  "_id": "Cust00004",
+  "Password": "nikitamerijaan@122",
+  "Role": "Customer"
+},
+{
+  "_id": "Cust00005",
+  "Password": "kkk@9720",
+  "Role": "Customer"
+},
+{
+  "_id": "Cust00006",
+  "Password": "parul@192",
+  "Role": "Customer"
+},
+{
+  "_id": "Cust00007",
+  "Password": "karan@459",
+  "Role": "Customer"
+},
+{
+  "_id": "AD00001",
+  "Password": "nkss2010",
+  "Role": "Admin"
+},
+{
+  "_id": "DEA00001",
+  "Password": "hills@Kiran@2001",
+  "Role": "Dealer"
+},
+{
+  "_id": "DEA00002",
+  "Password": "vimal@110253",
+  "Role": "Dealer"
+},
+{
+  "_id": "DEA00003",
+  "Password": "mahendar@12345",
+  "Role": "Dealer"
+},
+{
+  "_id": "DY00001",
+  "Password": "ved@9876543210",
+  "Role": "Delivery"
+},
+{
+  "_id": "D00002",
+  "Password": "vipNagar@9876543210",
+  "Role": "Delivery"
+}
+])

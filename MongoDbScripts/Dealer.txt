@@ -1,0 +1,60 @@
+use ShoppingCartCaseStudy
+
+db.Dealer.insertMany([{
+  "_id": "DEA00001",
+  "DealerName": {
+    "FName": "Kiran",
+    "MName": "Rao",
+    "LName": "Haidari"
+  },
+  "DealerFirmName": "Hills Medicos",
+  "DealerMobileNo": 9837787075,
+  "DealerEmail": "kiranhillsmedicos@gmail.com",
+  "DealerPanNo": "EEIPK3197N",
+  "DealerGSTNo": "1234567890",
+  "DealerAddress": {
+    "Street": "Saraswati Nagar",
+    "City": "Pithoragarh",
+    "State": "Uttarakhand",
+    "Pincode": 262501
+  },
+  "DealerPassword": "hills@Kiran@2001"
+},{
+  "_id": "DEA00002",
+  "DealerName": {
+    "FName": "Ram",
+    "MName": "Kumar",
+    "LName": "Aggrawal"
+  },
+  "DealerFirmName": "Vimal Drug House",
+  "DealerMobileNo": 9837787058,
+  "DealerEmail": "vimaldrugs@gmail.com",
+  "DealerPanNo": "EEIPK3236K",
+  "DealerGSTNo": "9876543210",
+  "DealerAddress": {
+    "Street": "Mohan Nagar",
+    "City": "New Delhi",
+    "State": "Delhi",
+    "Pincode": 110253
+  },
+  "DealerPassword": "vimal@110253"
+},{
+  "_id": "DEA00003",
+  "DealerName": {
+    "FName": "Kiran",
+    "MName": "Rao",
+    "LName": "Haidari"
+  },
+  "DealerFirmName": "Khurana Medicos",
+  "DealerMobileNo": 98377875569,
+  "DealerEmail": "medicoskhurana@gmail.com",
+  "DealerPanNo": "EMTPK3197N",
+  "DealerGSTNo": "1255567890",
+  "DealerAddress": {
+    "Street": "YAMUNA Nagar",
+    "City": "Mumbai",
+    "State": "Maharashtra",
+    "Pincode": 12345
+  },
+  "DealerPassword": "mahendar@12345"
+}])

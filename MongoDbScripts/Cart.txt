@@ -1,0 +1,45 @@
+use ShoppingCartCaseStudy
+
+db.Cart.insertMany([{
+  "_id": "CID00001",
+  "CustId": "CUST00001",
+  "ProductId": [
+    "PID00010",
+    "PID00002"
+  ]
+},{
+  "_id": "CID00002",
+  "CustId": "CUST00002",
+  "ProductId": []
+},{
+  "_id": "CID00003",
+  "CustId": "CUST00003",
+  "ProductId": [
+    "PID00001",
+    "PID00003"
+  ]
+},{
+  "_id": "CID00004",
+  "CustId": "CUST00004",
+  "ProductId": [
+    "PID00005"
+  ]
+},{
+  "_id": "CID00005",
+  "CustId": "CUST00005",
+  "ProductId": [
+    "PID00008",
+    "PID00012",
+    "PID00003"
+  ]
+},{
+  "_id": "CID00006",
+  "CustId": "CUST00006",
+  "ProductId": [
+    "PID00005"
+  ]
+},{
+  "_id": "CID00007",
+  "CustId": "CUST00007",
+  "ProductId": []
+}])

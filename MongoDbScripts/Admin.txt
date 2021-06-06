@@ -1,0 +1,23 @@
+use ShoppingCartCaseStudy
+
+db.Admin.insertMany([{
+  "_id": "AD00001",
+  "AName": {
+    "FName": "Naman",
+    "MName": "",
+    "LName": "Kapoor"
+  },
+  "AMobileNo": 6394412789,
+  "AEmail": "kapoor.naman@gmail.com",
+  "AAddress": {
+    "Street": "Saraswati Nagar",
+    "City": "Meerut",
+    "State": "Haryana",
+    "Pincode": 136978
+  },
+  "ADOB": {
+    "$date": "1997-09-08T18:30:00Z"
+  },
+  "APassword1": "nkss2010",
+  "APassword2": "Tokyo@2020"
+}])

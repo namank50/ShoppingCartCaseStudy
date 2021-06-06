@@ -1,0 +1,29 @@
+db.Orders.insertMany([{
+  "_id": "OD00001",
+  "PID": [
+    "PID00010"
+  ],
+  "DEAID": "DEA00003",
+  "DID": "DY00001",
+  "Total": 259,
+  "CUSTID": "CUST00007",
+  "Status": "Ordered",
+  "PaymentStatus": true,
+  "\"Date\"": {
+    "$date": "1997-08-10T18:30:00Z"
+  }
+},{
+  "_id": "OD00002",
+  "PID": [
+    "PID00010"
+  ],
+  "DEAID": "DEA00003",
+  "DID": "DY00002",
+  "Total": 259,
+  "CUSTID": "CUST00005",
+  "Status": "Prepared",
+  "PaymentStatus": true,
+  "\"Date\"": {
+    "$date": "2021-05-10T18:30:00Z"
+  }
+}])
