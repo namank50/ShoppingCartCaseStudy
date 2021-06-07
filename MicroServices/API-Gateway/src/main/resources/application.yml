@@ -27,3 +27,10 @@ zuul:
     host:
         connect-timeout-millis: 2000
         socket-timeout-millis: 5000
+
+spring:
+    data:
+        mongodb:
+            host: localhost
+            port: 27017
+            database: ShoppingCartCaseStudy
