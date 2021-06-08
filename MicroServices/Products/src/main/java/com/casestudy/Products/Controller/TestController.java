@@ -25,4 +25,9 @@ public class TestController {
 	public List<Products> testdata() {
 		return testService.getAllData();
 	}
+	
+	@GetMapping("/testconnection")
+	public String testConnection() {
+		return testService.getDealer();
+	}
 }
