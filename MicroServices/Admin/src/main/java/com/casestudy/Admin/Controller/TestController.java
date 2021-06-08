@@ -25,5 +25,17 @@ public class TestController {
 		return testService.getAllData();
 	}
 	
+	@GetMapping("/testconnection")
+	public String allData() {
+		String x = testService.getDealer();
+		String y = testService.getDelivery();
+		String z = testService.getProduct();
+		String a = testService.getOrder();
+		String b = testService.getCart();
+		String c = testService.getCustomer();
+		return x+" "+y+" "+z+" "+a+" "+" "+b+" "+c;
+		
+	}
+	
 	
 }
