@@ -1,49 +1,30 @@
 package com.casestudy.Dealer.Models;
 
-import org.springframework.data.annotation.Id;
-import org.springframework.data.mongodb.core.mapping.Document;
+import org.springframework.stereotype.Component;
 
-@Document(collection = "Dealer")
-public class Dealer {
-
-	@Id
-	private String _Id;
+@Component
+public class DealerForOrder {
 	private Name DealerName;
 	private Long DealerMobileNo;
 	private String DealerEmail;
 	private Address DealerAddress;
-	private String DealerPassword;
 	private String DealerFirmName;
-	private String DealerPanNo;
 	private String DealerGSTNo;
 
-
-
-	public Dealer() {
+	public DealerForOrder() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
 
-	public Dealer(String _Id, Name dealerName, Long dealerMobileNo, String dealerEmail, Address dealerAddress,
-			String dealerPassword, String dealerFirmName, String dealerPanNo, String dealerGSTNo) {
+	public DealerForOrder(Name dealerName, Long dealerMobileNo, String dealerEmail, Address dealerAddress,
+			String dealerFirmName, String dealerGSTNo) {
 		super();
-		this._Id = _Id;
 		DealerName = dealerName;
 		DealerMobileNo = dealerMobileNo;
 		DealerEmail = dealerEmail;
 		DealerAddress = dealerAddress;
-		DealerPassword = dealerPassword;
 		DealerFirmName = dealerFirmName;
-		DealerPanNo = dealerPanNo;
 		DealerGSTNo = dealerGSTNo;
-	}
-
-	public String get_Id() {
-		return _Id;
-	}
-
-	public void set_Id(String _Id) {
-		this._Id = _Id;
 	}
 
 	public Name getDealerName() {
@@ -78,28 +59,12 @@ public class Dealer {
 		DealerAddress = dealerAddress;
 	}
 
-	public String getDealerPassword() {
-		return DealerPassword;
-	}
-
-	public void setDealerPassword(String dealerPassword) {
-		DealerPassword = dealerPassword;
-	}
-
 	public String getDealerFirmName() {
 		return DealerFirmName;
 	}
 
 	public void setDealerFirmName(String dealerFirmName) {
 		DealerFirmName = dealerFirmName;
-	}
-
-	public String getDealerPanNo() {
-		return DealerPanNo;
-	}
-
-	public void setDealerPanNo(String dealerPanNo) {
-		DealerPanNo = dealerPanNo;
 	}
 
 	public String getDealerGSTNo() {
@@ -109,5 +74,4 @@ public class Dealer {
 	public void setDealerGSTNo(String dealerGSTNo) {
 		DealerGSTNo = dealerGSTNo;
 	}
-
 }
