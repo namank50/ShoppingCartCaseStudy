@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.casestudy.Delivery.Models.Delivery;
+import com.casestudy.Delivery.Models.DeliveryForAdmin;
 import com.casestudy.Delivery.Models.DeliveryForOrder;
 import com.casestudy.Delivery.SErvice.DeliveryService;
 import com.casestudy.Delivery.SErvice.GenerateDeliveryId;
@@ -57,5 +58,12 @@ public class DeliveryMicrosService {
 	public DeliveryForOrder oneDealerDetails(@PathVariable("_Id") String _Id) {
 		return deliveryService.forOrderMicroservice(_Id);
 	}
+	
+	@GetMapping("/getforadmin")
+	public DeliveryForAdmin forAdminDelivery() { //to be called by admin service
+		return deliveryService.forAdminService();
+
+	}
+
 
 }

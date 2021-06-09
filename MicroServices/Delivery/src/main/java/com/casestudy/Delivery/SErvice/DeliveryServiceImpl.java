@@ -7,9 +7,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.casestudy.Dealer.Models.Dealer;
+import com.casestudy.Dealer.Models.DealerForAdmin;
 import com.casestudy.Dealer.Models.DealerForOrder;
 import com.casestudy.Delivery.DAO.DeliveryDatabase;
 import com.casestudy.Delivery.Models.Delivery;
+import com.casestudy.Delivery.Models.DeliveryForAdmin;
 import com.casestudy.Delivery.Models.DeliveryForOrder;
 
 @Service
@@ -19,6 +21,8 @@ public class DeliveryServiceImpl implements DeliveryService {
 	private DeliveryDatabase repository;
 	@Autowired
 	DeliveryForOrder deliveryForOrder;
+	@Autowired
+	DeliveryForAdmin deliveryForAdmin;
 
 	public List<Delivery> getAllDeliveryServices() {
 		return repository.findAll();
@@ -55,6 +59,13 @@ public class DeliveryServiceImpl implements DeliveryService {
 			deliveryForOrder.setDEmail(proDealer.get().getDEmail());;
 			deliveryForOrder.setDGSTNo(proDealer.get().getDGSTNo());
 			return deliveryForOrder;	
+		
+	}
+	
+	public DeliveryForAdmin forAdminService() {  // admin micro service will get this wrapped data 
+		List<Delivery> deliveryList=getAllDeliveryServices();
+		deliveryForAdmin.setDeliveryData(deliveryList);
+		return deliveryForAdmin;
 		
 	}
 
