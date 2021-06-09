@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.casestudy.Delivery.Models.Delivery;
+import com.casestudy.Delivery.SErvice.GenerateDeliveryId;
 import com.casestudy.Delivery.SErvice.TestService;
 
 @RestController
@@ -22,5 +23,9 @@ public class TestController {
 	@GetMapping("/testdata")
 	public List<Delivery> testData(){ 
 		return testService.getAllData();
+	}
+	@GetMapping("/testId")
+	public String testId(){ 
+		return GenerateDeliveryId.Total();
 	}
 }
