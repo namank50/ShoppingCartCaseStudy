@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.casestudy.Dealer.Models.Dealer;
+import com.casestudy.Dealer.Models.DealerForAdmin;
 import com.casestudy.Dealer.Models.DealerForOrder;
 import com.casestudy.Dealer.Service.DealerServiceImpl;
 import com.casestudy.Dealer.Service.GenerateDealerId;
@@ -62,5 +63,12 @@ public class DealerMicrosService {
 	public DealerForOrder oneDealerDetails(@PathVariable("_Id") String _Id) {
 		return dealerService.forOrderMicroservice(_Id);
 	}
+	
+	@GetMapping("/foradmin")
+	public DealerForAdmin forAdminDealers() {
+		return dealerService.forAdminService();// for admin microservice wrapped data
+
+	}
+
 
 }

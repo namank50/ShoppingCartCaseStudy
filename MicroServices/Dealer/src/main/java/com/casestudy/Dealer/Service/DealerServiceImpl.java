@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 
 import com.casestudy.Dealer.DAO.DealerDatabase;
 import com.casestudy.Dealer.Models.Dealer;
+import com.casestudy.Dealer.Models.DealerForAdmin;
 import com.casestudy.Dealer.Models.DealerForOrder;
 
 @Service
@@ -17,6 +18,8 @@ public class DealerServiceImpl implements DealerService {
 	private DealerDatabase repository;
 	@Autowired
 	DealerForOrder dealerForOrder;
+	@Autowired
+	DealerForAdmin dealerForAdmin;
 
 	public List<Dealer> getAllDealers() {
 		return repository.findAll();
@@ -60,6 +63,13 @@ public class DealerServiceImpl implements DealerService {
 			dealerForOrder.setDealerEmail(proDealer.get().getDealerEmail());;
 			dealerForOrder.setDealerGSTNo(proDealer.get().getDealerGSTNo());
 			return dealerForOrder;	
+		
+	}
+	
+	public DealerForAdmin forAdminService() {  // admin micro service will get this wrapped data 
+		List<Dealer> dealerList=getAllDealers();
+		dealerForAdmin.setDealerData(dealerList);
+		return dealerForAdmin;
 		
 	}
 
