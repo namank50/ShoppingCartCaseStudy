@@ -4,7 +4,7 @@ import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 @Document(collection = "Dealer")
-public class Delivery {
+public class Dealer {
 
 	@Id
 	private String _Id;
@@ -17,12 +17,14 @@ public class Delivery {
 	private String DealerPanNo;
 	private String DealerGSTNo;
 
-	public Delivery() {
+
+
+	public Dealer() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
 
-	public Delivery(String _Id, Name dealerName, Long dealerMobileNo, String dealerEmail, Address dealerAddress,
+	public Dealer(String _Id, Name dealerName, Long dealerMobileNo, String dealerEmail, Address dealerAddress,
 			String dealerPassword, String dealerFirmName, String dealerPanNo, String dealerGSTNo) {
 		super();
 		this._Id = _Id;
