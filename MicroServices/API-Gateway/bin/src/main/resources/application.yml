@@ -2,8 +2,6 @@ server:
     port:
         8088
 
-spring.application.name: security-service
-
 zuul:
     routes:
         discovery-server:
@@ -30,4 +28,9 @@ zuul:
         connect-timeout-millis: 2000
         socket-timeout-millis: 5000
 
-spring.data.mongodb.uri: mongodb+srv://namanKapoor:nkss2010@namankapoorcluster.itm4q.mongodb.net/ShoppingCartCaseStudy?retryWrites=true&w=majority
+spring:
+    data:
+        mongodb:
+            host: localhost
+            port: 27017
+            database: ShoppingCartCaseStudy
