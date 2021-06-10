@@ -15,7 +15,7 @@ public class SecurityController {
 	@Autowired
 	SecurityService securityService;
 	
-	@DeleteMapping("/delete/{_id}")
+	@GetMapping("/delete/{_id}")
 	public String save(@PathVariable("_id")String _id) {
 		return securityService.deleteData(_id);
 	}

@@ -19,10 +19,10 @@ public class GenerateDeliveryId {
 
 		int count = 0;
 		try {
-			if (!new File("C:\\Users\\NAMKAPOO\\OneDrive - Capgemini\\Desktop\\Ids\\deliveryId.txt").exists())
+			if (!new File("C:\\Users\\naman\\Desktop\\Ids\\deliveryId.txt").exists())
 				return 1;
 			else {
-				BufferedReader br = new BufferedReader(new FileReader(new File("C:\\Users\\NAMKAPOO\\OneDrive - Capgemini\\Desktop\\Ids\\deliveryId.txt")));
+				BufferedReader br = new BufferedReader(new FileReader(new File("C:\\Users\\naman\\Desktop\\Ids\\deliveryId.txt")));
 				String s = br.readLine();
 				count = Integer.parseInt(s);
 				br.close();
@@ -35,7 +35,7 @@ public class GenerateDeliveryId {
 
 	public void putCount(int count) {
 		try {
-			BufferedWriter bw = new BufferedWriter(new FileWriter(new File("C:\\Users\\NAMKAPOO\\OneDrive - Capgemini\\Desktop\\Ids\\deliveryId.txt")));
+			BufferedWriter bw = new BufferedWriter(new FileWriter(new File("C:\\Users\\naman\\Desktop\\Ids\\deliveryId.txt")));
 			bw.write(Integer.toString(count));
 			bw.close();
 		} catch (Exception e) {
