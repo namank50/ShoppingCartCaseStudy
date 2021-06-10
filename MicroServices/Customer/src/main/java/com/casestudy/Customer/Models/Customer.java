@@ -2,80 +2,78 @@ package com.casestudy.Customer.Models;
 
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
+import org.springframework.stereotype.Component;
 
+@Component
 @Document(collection = "Customers")
 public class Customer {
 
 	@Id
-	private String _Id;
+	private String _id;
 	private Name Name;
 	private Long CustMobNo;
 	private String CustEmail;
 	private Address CustAddress;
 	private String Password;
-
+	
+	
 	public Customer() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
-
-	public Customer(String _Id, Name aName, Long aMobileNo, String aEmail, Address aAddress, String aPassword1) {
+	
+	
+	public Customer(String _id, com.casestudy.Customer.Models.Name name, Long custMobNo, String custEmail,
+			Address custAddress, String password) {
 		super();
-		this._Id = _Id;
-		Name = aName;
-		CustMobNo = aMobileNo;
-		CustEmail = aEmail;
-		CustAddress = aAddress;
-		Password = aPassword1;
+		this._id = _id;
+		Name = name;
+		CustMobNo = custMobNo;
+		CustEmail = custEmail;
+		CustAddress = custAddress;
+		Password = password;
 	}
 
-	public String get_Id() {
-		return _Id;
-	}
 
-	public void set_Id(String _Id) {
-		this._Id = _Id;
+	public String get_id() {
+		return _id;
 	}
-
-	public Name getAName() {
+	public void set_id(String _id) {
+		this._id = _id;
+	}
+	public Name getName() {
 		return Name;
 	}
-
-	public void setAName(Name aName) {
-		Name = aName;
+	public void setName(Name name) {
+		Name = name;
 	}
-
-	public Long getAMobileNo() {
+	public Long getCustMobNo() {
 		return CustMobNo;
 	}
-
-	public void setAMobileNo(Long aMobileNo) {
-		CustMobNo = aMobileNo;
+	public void setCustMobNo(Long custMobNo) {
+		CustMobNo = custMobNo;
 	}
-
-	public String getAEmail() {
+	public String getCustEmail() {
 		return CustEmail;
 	}
-
-	public void setAEmail(String aEmail) {
-		CustEmail = aEmail;
+	public void setCustEmail(String custEmail) {
+		CustEmail = custEmail;
 	}
-
-	public Address getAAddress() {
+	public Address getCustAddress() {
 		return CustAddress;
 	}
-
-	public void setAAddress(Address aAddress) {
-		CustAddress = aAddress;
+	public void setCustAddress(Address custAddress) {
+		CustAddress = custAddress;
 	}
-
-
-	public String getAPassword1() {
+	public String getPassword() {
 		return Password;
 	}
-
-	public void setAPassword1(String aPassword1) {
-		Password = aPassword1;
+	public void setPassword(String password) {
+		Password = password;
 	}
+
+	
+
+
 
 }

@@ -7,7 +7,7 @@ import org.springframework.stereotype.Component;
 @Component
 public class DealerForAdmin {
 
-	private List<Dealer> dealerData;
+	private List<Customer> dealerData;
 	
 	
 
@@ -18,18 +18,18 @@ public class DealerForAdmin {
 	
 	
 
-	public DealerForAdmin(List<Dealer> dealerData) {
+	public DealerForAdmin(List<Customer> dealerData) {
 		super();
 		this.dealerData = dealerData;
 	}
 
 
 
-	public List<Dealer> getDealerData() {
+	public List<Customer> getDealerData() {
 		return dealerData;
 	}
 
-	public void setDealerData(List<Dealer> dealerData) {
+	public void setDealerData(List<Customer> dealerData) {
 		this.dealerData = dealerData;
 	}
 

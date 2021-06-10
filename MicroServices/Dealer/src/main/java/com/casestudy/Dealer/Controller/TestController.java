@@ -6,7 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.casestudy.Dealer.Models.Dealer;
+import com.casestudy.Dealer.Models.Customer;
 import com.casestudy.Dealer.Service.GenerateDealerId;
 import com.casestudy.Dealer.Service.TestService;
 
@@ -23,7 +23,7 @@ public class TestController {
 		}
 	
 	@GetMapping("/testdata")
-	public List<Dealer> testData(){ 
+	public List<Customer> testData(){ 
 		return testService.getAllData();
 	}
 	

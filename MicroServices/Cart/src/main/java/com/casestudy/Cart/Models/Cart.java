@@ -3,7 +3,9 @@ package com.casestudy.Cart.Models;
 import java.util.List;
 
 import org.springframework.data.mongodb.core.mapping.Document;
+import org.springframework.stereotype.Component;
 
+@Component
 @Document(collection = "Cart")
 public class Cart {
 
