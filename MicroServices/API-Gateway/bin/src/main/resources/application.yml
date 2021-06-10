@@ -1,0 +1,36 @@
+server:
+    port:
+        8088
+
+zuul:
+    routes:
+        discovery-server:
+            url: http://localhost:8761
+        customer-service:
+            url: http://localhost:8081
+        dealer-service:
+            url: http://localhost:8082
+        delivery-service:
+            url: http://localhost:8083
+        admin-service:
+            url: http://localhost:8084
+        product-service:
+            url: http://localhost:8085
+        order-service:
+            url: http://localhost:8086
+        cart-service:
+            url: http://localhost:8087
+        payment-service:
+            url: http://localhost:8089
+        security-service:
+            url: http://localhost:8090
+    host:
+        connect-timeout-millis: 2000
+        socket-timeout-millis: 5000
+
+spring:
+    data:
+        mongodb:
+            host: localhost
+            port: 27017
+            database: ShoppingCartCaseStudy
