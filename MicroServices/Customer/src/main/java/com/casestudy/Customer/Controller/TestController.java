@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 
 import com.casestudy.Customer.Models.Customer;
+import com.casestudy.Customer.SErvice.GenerateCustomerId;
 import com.casestudy.Customer.SErvice.TestService;
 
 @RestController
@@ -29,5 +30,9 @@ public class TestController {
 	@GetMapping("/testconnection")
 	public String testConnection() {
 		return testService.getCart();
+	}
+	@GetMapping("/testId")
+	public String testId() {
+		return GenerateCustomerId.Total();
 	}
 }

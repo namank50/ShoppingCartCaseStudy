@@ -13,9 +13,10 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.casestudy.Dealer.Models.Dealer;
+import com.casestudy.Dealer.Models.Customer;
 import com.casestudy.Dealer.Models.DealerForAdmin;
 import com.casestudy.Dealer.Models.DealerForOrder;
+import com.casestudy.Dealer.Service.CustomerServiceImpl;
 import com.casestudy.Dealer.Service.DealerServiceImpl;
 import com.casestudy.Dealer.Service.GenerateDealerId;
 
@@ -27,25 +28,25 @@ public class DealerMicrosService {
 	DealerServiceImpl dealerService;
 
 	@GetMapping("/getall")
-	public List<Dealer> allDealers() {
+	public List<Customer> allDealers() {
 		return dealerService.getAllDealers();
 
 	}
 
 	@GetMapping("/getone/{_Id}")
-	public Optional<Dealer> oneDealer(@PathVariable("_Id") String _Id) {
+	public Optional<Customer> oneDealer(@PathVariable("_Id") String _Id) {
 		return dealerService.getOneDealer(_Id);
 
 	}
 
 	@PostMapping("/add")
-	public String addDealer(@RequestBody Dealer newDealer) {
+	public String addDealer(@RequestBody Customer newDealer) {
 		newDealer.set_Id(GenerateDealerId.Total());
 		return dealerService.addNewDealer(newDealer);
 	}
 
 	@PutMapping("/update")
-	public String updateDealer(@RequestBody Dealer updateDealer) {
+	public String updateDealer(@RequestBody Customer updateDealer) {
 		return dealerService.updateDealer(updateDealer);
 	}
 

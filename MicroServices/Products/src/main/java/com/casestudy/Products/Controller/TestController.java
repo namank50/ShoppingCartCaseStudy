@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.casestudy.Products.Models.Products;
+import com.casestudy.Products.Service.GenerateDeliveryId;
 import com.casestudy.Products.Service.TestService;
 
 @RestController
@@ -29,5 +30,10 @@ public class TestController {
 	@GetMapping("/testconnection")
 	public String testConnection() {
 		return testService.getDealer();
+	}
+	
+	@GetMapping("/testId")
+	public String testId() {
+		return GenerateDeliveryId.Total();
 	}
 }
