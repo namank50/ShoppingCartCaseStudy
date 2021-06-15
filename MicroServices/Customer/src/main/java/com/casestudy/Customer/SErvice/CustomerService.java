@@ -17,6 +17,7 @@ public interface CustomerService {
 	public String updateCustomer(Customer updateDealer);
 	public String deleteCustomer(String _Id);
 	public CustomerForOrder forOrderMicroservice(String _Id);
-	public CustomerForAdmin forAdminService()
+	public CustomerForAdmin forAdminService();
+	public String getCustomerName(String _Id);
 
 }

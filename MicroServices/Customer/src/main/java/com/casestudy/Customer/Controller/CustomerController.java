@@ -66,6 +66,12 @@ public class CustomerController {
 		return customerService.forAdminService();// for admin microservice wrapped data
 
 	}
+	
+	@GetMapping("/customerFName/{_Id}")
+	public String forCustomerName(@PathVariable("_Id") String _Id) {
+		return customerService.getCustomerName(_Id);
+
+	}
 
 
 }

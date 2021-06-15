@@ -10,7 +10,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
 import com.casestudy.Dealer.DAO.DealerDatabase;
-import com.casestudy.Dealer.Models.Customer;
+import com.casestudy.Dealer.Models.Dealer;
 import com.casestudy.Dealer.Models.DealerForAdmin;
 import com.casestudy.Dealer.Models.DealerForOrder;
 import com.casestudy.Dealer.Models.ForQueue;
@@ -32,15 +32,15 @@ public class DealerServiceImpl implements DealerService {
 	@Autowired
 	private RestTemplate restTemplate;
 
-	public List<Customer> getAllDealers() {
+	public List<Dealer> getAllDealers() {
 		return repository.findAll();
 	}
 
-	public Optional<Customer> getOneDealer(String _Id) {
+	public Optional<Dealer> getOneDealer(String _Id) {
 		return repository.findById(_Id);
 	}
 
-	public String addNewDealer(Customer newDealer) { // add entry into security db also
+	public String addNewDealer(Dealer newDealer) { // add entry into security db also
 		repository.save(newDealer);
 		ForQueue.set_id(newDealer.get_Id());
 		ForQueue.setPassword(newDealer.getDealerPassword());
@@ -50,7 +50,7 @@ public class DealerServiceImpl implements DealerService {
 
 	}
 
-	public String updateDealer(Customer updateDealer) {
+	public String updateDealer(Dealer updateDealer) {
 		repository.save(updateDealer);
 		ForQueue.set_id(updateDealer.get_Id());
 		ForQueue.setPassword(updateDealer.getDealerPassword());
@@ -66,7 +66,7 @@ public class DealerServiceImpl implements DealerService {
 	}
 
 	public String forProductMicroservice(String _Id) { // product micro-service will require the name of dealer
-		Optional<Customer> proDealer = getOneDealer(_Id);
+		Optional<Dealer> proDealer = getOneDealer(_Id);
 		if(proDealer.isEmpty())
 			return "No dealer present with specified Id";
 		return proDealer.get().getDealerFirmName();
@@ -74,7 +74,7 @@ public class DealerServiceImpl implements DealerService {
 	}
 	
 	public DealerForOrder forOrderMicroservice(String _Id) { // order micro-service will require the object "DealerforOrder"
-		Optional<Customer> proDealer = getOneDealer(_Id);
+		Optional<Dealer> proDealer = getOneDealer(_Id);
 			dealerForOrder.setDealerName(proDealer.get().getDealerName());
 			dealerForOrder.setDealerFirmName(proDealer.get().getDealerFirmName());
 			dealerForOrder.setDealerMobileNo(proDealer.get().getDealerMobileNo());
@@ -86,7 +86,7 @@ public class DealerServiceImpl implements DealerService {
 	}
 	
 	public DealerForAdmin forAdminService() {  // admin micro service will get this wrapped data 
-		List<Customer> dealerList=getAllDealers();
+		List<Dealer> dealerList=getAllDealers();
 		dealerForAdmin.setDealerData(dealerList);
 		return dealerForAdmin;
 		
