@@ -16,6 +16,7 @@ import com.casestudy.Customer.Models.ForQueue;
 import com.casestudy.Customer.Models.QueueForCart;
 import com.casestudy.Customer.config.MessagingConfig;
 import com.casestudy.Customer.config.MessagingQueueConfigCart;
+import com.casestudy.Delivery.Models.Delivery;
 
 @Service
 public class CustomerServiceImpl implements CustomerService {
@@ -85,6 +86,13 @@ public class CustomerServiceImpl implements CustomerService {
 		customerForAdmin.setCustomerData(customerList);
 		return customerForAdmin;
 
+	}
+	
+	@Override
+	public String getCustomerName(String _Id) {
+		// TODO Auto-generated method stub
+		Customer d =repository.findById(_Id).orElse(null);
+		return d.getName().getFName();
 	}
 
 }

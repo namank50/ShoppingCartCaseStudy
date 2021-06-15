@@ -8,7 +8,7 @@ import org.springframework.stereotype.Service;
 import com.casestudy.Customer.DAO.CustomerDatabase;
 import com.casestudy.Customer.Models.Customer;
 import com.casestudy.Dealer.DAO.DealerDatabase;
-import com.casestudy.Dealer.Models.Customer;
+import com.casestudy.Dealer.Models.Dealer;
 
 @Service
 public class TestService {
@@ -16,7 +16,7 @@ public class TestService {
 	@Autowired
 	private DealerDatabase repository;
 	
-	public List<Customer> getAllData() {
+	public List<Dealer> getAllData() {
 		System.out.println(repository.findAll());
 		return repository.findAll();
 	}

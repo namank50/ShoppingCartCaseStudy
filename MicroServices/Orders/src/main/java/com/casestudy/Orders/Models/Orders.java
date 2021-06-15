@@ -2,8 +2,10 @@ package com.casestudy.Orders.Models;
 
 import java.util.List;
 
+import org.springframework.context.annotation.Configuration;
 import org.springframework.data.mongodb.core.mapping.Document;
 
+@Configuration
 @Document(collection = "Orders")
 public class Orders {
 
@@ -15,15 +17,17 @@ public class Orders {
 	private String Status;
 	private int Total;
 	private boolean PaymentStatus;
-	private Date Date;
+	private String Date;
 
 	public Orders() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
+	
+	
 
 	public Orders(String _id, List<String> pID, String cUSTID, String dEAID, String dID, String status, int total,
-			boolean paymentStatus, com.casestudy.Orders.Models.Date date) {
+			boolean paymentStatus, String date) {
 		super();
 		this._id = _id;
 		PID = pID;
@@ -35,6 +39,8 @@ public class Orders {
 		PaymentStatus = paymentStatus;
 		Date = date;
 	}
+
+
 
 	public String get_id() {
 		return _id;
@@ -100,12 +106,15 @@ public class Orders {
 		PaymentStatus = paymentStatus;
 	}
 
-	public Date getDate() {
+	public String getDate() {
 		return Date;
 	}
 
-	public void setDate(Date date) {
+	public void setDate(String date) {
 		Date = date;
 	}
+
+	
+	
 
 }

@@ -53,6 +53,12 @@ public class ProductController {
 		
 	}
 	
+	@GetMapping("/productName/{_Id}")
+	public String forCustomerName(@PathVariable("_Id") String _Id) {
+		return productService.getProductName(_Id);
+
+	}
+	
 	@GetMapping("/foradmin")                                                 //to be called by admin micro service
 	public ProductsForAdmin forAdminProduct() {
 		return productService.forAdmin();

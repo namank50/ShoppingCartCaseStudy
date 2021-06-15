@@ -14,6 +14,8 @@ import com.casestudy.Delivery.SErvice.TestService;
 public class TestController {
 	@Autowired
 	TestService testService;
+	@Autowired
+	TestService DeliveryService;
 
 	@GetMapping("/test")
 	public String test() {
@@ -28,4 +30,5 @@ public class TestController {
 	public String testId(){ 
 		return GenerateDeliveryId.Total();
 	}
+	
 }

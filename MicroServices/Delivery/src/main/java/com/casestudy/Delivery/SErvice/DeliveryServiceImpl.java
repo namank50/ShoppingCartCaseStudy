@@ -85,6 +85,21 @@ public class DeliveryServiceImpl implements DeliveryService {
 		
 	}
 
-	
+	@Override
+	public int noOfDealers() {
+		int count =0;
+		List<Delivery> d=repository.findAll();
+		for(Delivery d1 : d  ) {
+			count++;
+		}
+		return count;
+	}
+
+	@Override
+	public String getDealerName(String _Id) {
+		// TODO Auto-generated method stub
+		Delivery d =repository.findById(_Id).orElse(null);
+		return d.getDFirmName();
+	}
 
 }

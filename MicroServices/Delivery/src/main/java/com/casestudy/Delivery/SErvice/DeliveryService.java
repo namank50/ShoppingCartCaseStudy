@@ -18,4 +18,6 @@ public interface DeliveryService {
 	public String deleteDelivery(String _Id);
 	public DeliveryForOrder forOrderMicroservice(String _Id);
 	public DeliveryForAdmin forAdminService();
+	public int noOfDealers();
+	public String getDealerName(String _Id);
 }

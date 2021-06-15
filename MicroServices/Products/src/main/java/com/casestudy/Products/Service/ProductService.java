@@ -26,4 +26,6 @@ public interface ProductService {
 	public ProductsForAdmin findByCategory(String Category);
 
 	public Products findByPName(String PName);
+
+	public String getProductName(String _Id);
 }

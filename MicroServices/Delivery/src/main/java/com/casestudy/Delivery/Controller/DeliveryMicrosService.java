@@ -54,15 +54,25 @@ public class DeliveryMicrosService {
 		return deliveryService.deleteDelivery(_Id);
 	}
 
-	@GetMapping("/getdeliveryDetails/{_Id}") // to be called by order micro-service
+	@GetMapping("/getdeliveryDetails/{_Id}") 
 	public DeliveryForOrder oneDealerDetails(@PathVariable("_Id") String _Id) {
 		return deliveryService.forOrderMicroservice(_Id);
+	}
+	
+	@GetMapping("/getdeliveryName/{_Id}") // to be called by order micro-service
+	public String oneDealerName(@PathVariable("_Id") String _Id) {
+		return deliveryService.getDealerName(_Id);
 	}
 	
 	@GetMapping("/getforadmin")
 	public DeliveryForAdmin forAdminDelivery() { //to be called by admin service
 		return deliveryService.forAdminService();
 
+	}
+	
+	@GetMapping("/number")
+	public int noOfDealers(){ 
+		return deliveryService.noOfDealers();
 	}
 
 

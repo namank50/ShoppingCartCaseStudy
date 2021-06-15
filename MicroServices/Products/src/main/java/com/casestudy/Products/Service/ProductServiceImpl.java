@@ -7,6 +7,7 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.casestudy.Customer.Models.Customer;
 import com.casestudy.Products.DAO.ProductDatabase;
 import com.casestudy.Products.Models.Products;
 import com.casestudy.Products.Models.ProductsForAdmin;
@@ -73,5 +74,13 @@ public class ProductServiceImpl implements ProductService {
 		// TODO Auto-generated method stub
 		return productDatabase.findByPName(PName);
 	}
+	
+	@Override
+	public String getProductName(String _Id) {
+		// TODO Auto-generated method stub
+		Products d =productDatabase.findById(_Id).orElse(null);
+		return d.getPName();
+	}
+
 
 }
