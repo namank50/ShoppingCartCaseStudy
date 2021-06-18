@@ -25,13 +25,28 @@
 			<artifactId>rest-api-sdk</artifactId>
 			<version>1.14.0</version>
 		</dependency>
+		<dependency>
+			<groupId>io.springfox</groupId>
+			<artifactId>springfox-swagger2</artifactId>
+			<version>3.0.0</version>
+		</dependency>
+		<dependency>
+			<groupId>io.springfox</groupId>
+			<artifactId>springfox-swagger-ui</artifactId>
+			<version>2.9.2</version>
+		</dependency>
+		<dependency>
+			<groupId>com.paytm</groupId>
+			<artifactId>paytm-checksum</artifactId>
+			<version>1.2.0</version>
+		</dependency>
 		<!-- https://mvnrepository.com/artifact/com.paypal.sdk/rest-api-sdk -->
 		<dependency>
 			<groupId>com.paypal.sdk</groupId>
 			<artifactId>rest-api-sdk</artifactId>
 			<version>1.14.0</version>
 		</dependency>
-
+		<!-- https://mvnrepository.com/artifact/com.paytm/pgplussdk -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-data-mongodb</artifactId>
@@ -106,6 +121,10 @@
 			<releases>
 				<enabled>false</enabled>
 			</releases>
+		</repository>
+		<repository>
+			<id>my-repo1</id>
+			<url> http://artifactorypg.paytm.in/artifactory/libs-release </url>
 		</repository>
 	</repositories>
 	<pluginRepositories>

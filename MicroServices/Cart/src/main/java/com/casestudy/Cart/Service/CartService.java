@@ -12,5 +12,6 @@ public interface CartService {
 	public String deleteCart(String CustId);
 	public CartForOutput getCart(String custId);
 	public String addAproductToExistingCart(CartForInput customer);
+	public String addRemoveToExistingCart(CartForInput customer);
 	
 }

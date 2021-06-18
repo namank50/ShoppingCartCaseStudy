@@ -23,7 +23,6 @@ public class CartServiceImpl implements CartService {
 	CartDatabase cartDatabase;
 	@Autowired
 	CartForOutput cartForOutput;
-	
 	@Autowired
 	RestTemplate restTemplate;
 	
@@ -31,9 +30,10 @@ public class CartServiceImpl implements CartService {
 	
 	@Override
 	public String CreateCart(String CustId) {
+		List<String> ay = new ArrayList<>();
 		 cart.set_Id("CID"+CustId.split("_")[1]);
 		 cart.setCustId(CustId);
-		 cart.setProductId(null);
+		 cart.setProductId(ay);
 		 cartDatabase.save(cart);
 		 return "success";
 	}
@@ -64,9 +64,17 @@ public class CartServiceImpl implements CartService {
 
 	@Override
 	public String addAproductToExistingCart(CartForInput customer) {
-		Optional<Cart> cart1=cartDatabase.findById(customer.getCartId());
-		cart1.get().getProductId().add(customer.getProductId());
+		Cart cart1=cartDatabase.findById(customer.getCartId()).orElse(null);
+		cart1.getProductId().add(customer.getProductId());
 		cartDatabase.save(cart1);
 		return "Success";
+	}
+
+	@Override
+	public String addRemoveToExistingCart(CartForInput customer) {
+		Cart cart1=cartDatabase.findById(customer.getCartId()).orElse(null);
+		cart1.getProductId().remove(customer.getProductId());
+		cartDatabase.save(cart1);
+		return "success";
 	}
 }
