@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 import com.casestudy.Orders.Models.OrderForAdmin;
 import com.casestudy.Orders.Models.OrderForInput;
 import com.casestudy.Orders.Models.OrderForOutput;
+import com.casestudy.Orders.Models.OrderForPaymentOutput;
 import com.casestudy.Orders.Models.Orders;
 
 @Service
@@ -17,20 +18,21 @@ public interface OrdersService {
 
 	Optional<Orders> getOneOrder(String _Id);
 
-	List<String> addNewOrder(OrderForInput order);
+	OrderForPaymentOutput addNewOrder(OrderForInput order);
 
 	String deleteOrder(String _Id);
 
 	String changeOrderStatus(String _Id, String status);
 
-	String updatePaymentStatus(List<String> orderList);
 
-	OrderForOutput getCustomerOrder(String _Id);
-
-	OrderForOutput getDealerOrder(String _Id);
-
-	OrderForOutput getDeliveryOrder(String _Id);
+//	OrderForOutput getCustomerOrder(String _Id);
+//
+//	OrderForOutput getDealerOrder(String _Id);
+//
+//	OrderForOutput getDeliveryOrder(String _Id);
 	
-	OrderForAdmin sendOrders();
+	public OrderForAdmin sendOrders();
+
+	String updatePaymentStatus(String orderId);
 
 }

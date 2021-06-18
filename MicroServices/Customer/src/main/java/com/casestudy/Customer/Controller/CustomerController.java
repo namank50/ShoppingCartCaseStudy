@@ -19,6 +19,8 @@ import com.casestudy.Customer.Models.CustomerForOrder;
 import com.casestudy.Customer.SErvice.CustomerServiceImpl;
 import com.casestudy.Customer.SErvice.GenerateCustomerId;
 
+import io.swagger.annotations.ApiOperation;
+
 
 @RestController
 @RequestMapping("/customer")
@@ -28,46 +30,54 @@ public class CustomerController {
 	CustomerServiceImpl customerService;
 
 	@GetMapping("/getall")
+	@ApiOperation(value = "To get all the customers",notes="List of customer")
 	public List<Customer> allDealers() {
 		return customerService.getAllCustomers();
 
 	}
 
 	@GetMapping("/getone/{_id}")
+	@ApiOperation(value = "It Show details of a particular customer",notes="to view details of an existing customer")
 	public Optional<Customer> oneCustomer(@PathVariable("_id") String _id) {
 		return customerService.getOneCustomer(_id);
 
 	}
 
 	@PostMapping("/add")
+	@ApiOperation(value = "To add a new customer",notes="to add in mongo database and to create its cart")
 	public String addDealer(@RequestBody Customer newDealer) {
 		newDealer.set_id(GenerateCustomerId.Total());
 		return customerService.addNewCustomer(newDealer);
 	}
 
 	@PutMapping("/update")
+	@ApiOperation(value = "To update an existing customer",notes="to update an existing customer")
 	public String updateCustomer(@RequestBody Customer updateDealer) {
 		return customerService.updateCustomer(updateDealer);
 	}
 
 	@DeleteMapping("/delete/{_id}")
+	@ApiOperation(value = "It delete a particular customer",notes="to delete of an existing customer also deletes its cart")
 	public String deleteCustomer(@PathVariable("_id") String _Id) {
 		return customerService.deleteCustomer(_Id);
 	}
 
 
 	@GetMapping("/getdealerDetails/{_id}") // to be called by order micro-service
+	@ApiOperation(value = "To get one customer details by others",notes="to be called by order micro service")
 	public CustomerForOrder oneCustomerDetails(@PathVariable("_id") String _Id) {
 		return customerService.forOrderMicroservice(_Id);
 	}
 	
 	@GetMapping("/foradmin")
+	@ApiOperation(value = "Data wrapped to be send to admin",notes="to be called by admin microservice to get data")
 	public CustomerForAdmin forAdminCustomer() {
 		return customerService.forAdminService();// for admin microservice wrapped data
 
 	}
 	
 	@GetMapping("/customerFName/{_Id}")
+	@ApiOperation(value = "It get customer name",notes="required by order and admin microservice")
 	public String forCustomerName(@PathVariable("_Id") String _Id) {
 		return customerService.getCustomerName(_Id);
 

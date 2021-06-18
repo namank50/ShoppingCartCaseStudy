@@ -1,4 +1,4 @@
-package com.casestudy.Orders.Service;
+ package com.casestudy.Orders.Service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -20,5 +20,4 @@ public class GenerateDID {
 		}
 		return "DY"+String.format("%05d",x+1);
 	}
-
 }
