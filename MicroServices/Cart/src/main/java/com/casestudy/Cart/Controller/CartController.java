@@ -54,6 +54,8 @@ public class CartController {
 	
 	@GetMapping("/delete/{CustId}")
 	@ApiOperation(value = "To delete a cart",notes="called by customer microservice(when a customer is deleted) automatically deletes the cart when a customer is deleted")
+
+	
 	public String deleteCart(@PathVariable("CustId")String CustId) {
 		return cart.deleteCart(CustId);
 	}

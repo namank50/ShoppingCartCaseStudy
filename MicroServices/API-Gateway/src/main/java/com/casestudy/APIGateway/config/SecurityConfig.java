@@ -2,6 +2,7 @@ package com.casestudy.APIGateway.config;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
+import org.springframework.http.HttpMethod;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
@@ -13,18 +14,21 @@ import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.crypto.password.NoOpPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
+import org.springframework.web.bind.annotation.CrossOrigin;
 
 import com.casestudy.APIGateway.Filters.JwtRequestFilter;
 import com.casestudy.APIGateway.Service.MyUsersDetailService;
 
 @EnableWebSecurity
+@CrossOrigin(origins = "http://localhost:4200")
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
 	@Autowired
 	MyUsersDetailService myUserDetailsService;
 	
-	@Autowired
-	JwtRequestFilter jwtRequestFilter;
+	/*
+	 * @Autowired JwtRequestFilter jwtRequestFilter;
+	 */
 
 	@Override
 	protected void configure(AuthenticationManagerBuilder auth) throws Exception {
@@ -50,12 +54,12 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 	 */
 	
 	@Override public void configure(HttpSecurity http) throws Exception {
-		 http.csrf().disable()
-		 .authorizeRequests().antMatchers("/security/authenticate").permitAll().and()
-		 .authorizeRequests().antMatchers("/api-product/product/getall").permitAll()
-		 .anyRequest().authenticated().and().sessionManagement()
-		 .sessionCreationPolicy(SessionCreationPolicy.STATELESS);
-		 http.addFilterBefore(jwtRequestFilter,UsernamePasswordAuthenticationFilter.class);
+		http.csrf().disable()
+		 .authorizeRequests().//antMatchers("/security/authenticate").permitAll()
+		 antMatchers("/api-product/product/getall").permitAll()
+				//.antMatchers(HttpMethod.OPTIONS,"/**").permitAll() 
+		 .anyRequest().permitAll().and().httpBasic();
+		 //http.addFilterBefore(jwtRequestFilter,UsernamePasswordAuthenticationFilter.class);
 		 }
 	
 	

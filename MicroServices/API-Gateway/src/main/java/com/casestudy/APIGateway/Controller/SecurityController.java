@@ -23,40 +23,37 @@ import com.casestudy.APIGateway.Util.JwtUtil;
 
 @RestController
 @RequestMapping("/security")
-@CrossOrigin(origins = "http://localhost:4200")
+@CrossOrigin(origins = "*")
 public class SecurityController {
 	@Autowired
 	SecurityService securityService;
 	
-	@Autowired
-	private AuthenticationManager authenticationManager;
-	
-	@Autowired
-	private MyUsersDetailService userDetailsService;
-	
-	@Autowired
-	private JwtUtil jwtToken;
+	/*
+	 * @Autowired private AuthenticationManager authenticationManager;
+	 * 
+	 * @Autowired private MyUsersDetailService userDetailsService;
+	 * 
+	 * @Autowired private JwtUtil jwtToken;
+	 */
 	
 	@GetMapping("/delete/{_id}")
 	public String save(@PathVariable("_id")String _id) {
 		return securityService.deleteData(_id);
 	}
 	
-	@RequestMapping(value="/authenticate", method=RequestMethod.POST)
-	public ResponseEntity<?> createAuthenticationToken(@RequestBody SecurityRequest securityRequest)
-	throws Exception{
-		try
-		{
-			authenticationManager.authenticate(
-				new UsernamePasswordAuthenticationToken(securityRequest.getUsername(), securityRequest.getPassword())
-				);
-		}catch(BadCredentialsException e) {
-			throw new Exception("Incorrect Username or password",e);
-		}
-		final UserDetails userDetails = userDetailsService.loadUserByUsername(securityRequest.getUsername());
-		final String jwt = jwtToken.generateToken(userDetails);
-		return ResponseEntity.ok(new SecurityResponse(jwt));
-		
-	}
+	/*
+	 * @RequestMapping(value="/authenticate", method=RequestMethod.POST) public
+	 * ResponseEntity<?> createAuthenticationToken(@RequestBody SecurityRequest
+	 * securityRequest) throws Exception{ try { authenticationManager.authenticate(
+	 * new UsernamePasswordAuthenticationToken(securityRequest.getUsername(),
+	 * securityRequest.getPassword()) ); }catch(BadCredentialsException e) { throw
+	 * new Exception("Incorrect Username or password",e); } final UserDetails
+	 * userDetails =
+	 * userDetailsService.loadUserByUsername(securityRequest.getUsername()); final
+	 * String jwt = jwtToken.generateToken(userDetails); return
+	 * ResponseEntity.ok(new SecurityResponse(jwt));
+	 * 
+	 * }
+	 */
 
 }
